@@ -1,7 +1,8 @@
 const Discord = require("discord.js")
-var { prefix, token, GhpToken } = require("./config.json")
 require('dotenv').config()
-token = process.env.TOKEN
+const token = process.env.TOKEN
+const prefix = process.env.prefix
+const GhpToken = process.env.GhpToken
 const ytdl = require('ytdl-core');
 const util = require('util');
 var badwordsArray = require('badwords/array');
