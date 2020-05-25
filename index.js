@@ -1,5 +1,5 @@
 const Discord = require("discord.js")
-const { prefix, token, GhpToken } = require("./config.json")
+var { prefix, token, GhpToken } = require("./config.json")
 require('dotenv').config()
 token = process.env.TOKEN
 const ytdl = require('ytdl-core');
