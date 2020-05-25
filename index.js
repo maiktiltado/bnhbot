@@ -16,7 +16,7 @@ async function execute(message, serverQueue, volume=0.01) {
         volume = 0.01
     }
     console.log(volume)
-    const args = message.content.split(" ");
+    const args = message.content.split(" ")
   
     const voiceChannel = message.member.voice.channel;
     if (!voiceChannel)
