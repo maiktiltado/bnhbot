@@ -1,21 +1,19 @@
 const fs = require("fs");
-
 module.exports = class AddCommand {    
-    static execute(message) {
-        const { prefix } = require("../config.json");
-        const command = message.content.split(prefix)[1].split(" ")[0].toLowerCase()
-        if(!message.content.split(`${prefix}${command} `)[1]) {
-            message.reply(`a sintaxe correta é: ${prefix}addcommand <nome> <código>`)
+    static execute(message) {        
+        const command = message.content.split(process.env.prefix)[1].split(" ")[0].toLowerCase()
+        if(!message.content.split(`${process.env.prefix}${command} `)[1]) {
+            message.reply(`a sintaxe correta é: ${process.env.prefix}addcommand <nome> <código>`)
             return;
         }
-        const nome = message.content.split(`${prefix}${command} `)[1].split(" ")[0]
+        const nome = message.content.split(`${process.env.prefix}${command} `)[1].split(" ")[0]
         if(!nome) {
-            message.reply(`a sintaxe correta é: ${prefix}addcommand <nome> <código>`)
+            message.reply(`a sintaxe correta é: ${process.env.prefix}addcommand <nome> <código>`)
             return;
         }
-        let content = message.content.split(`${prefix}${command} `)[1].split(nome + " ")[1]        
+        let content = message.content.split(`${process.env.prefix}${command} `)[1].split(nome + " ")[1]        
         if(!content) {
-            message.reply(`a sintaxe correta é: ${prefix}addcommand <nome> <código>`)
+            message.reply(`a sintaxe correta é: ${process.env.prefix}addcommand <nome> <código>`)
             return;            
         }
 

@@ -1,5 +1,5 @@
 const Discord = require("discord.js")
-const { prefix, token, GhpToken } = require('./config.json')
+require("dotenv").config()
 const client = new Discord.Client()
 const fs = require('fs')
 
@@ -17,8 +17,8 @@ client.on('ready', async () => {
 });
 
 client.on('message', async message => {  
-  if(!message.content.startsWith(prefix)) return;
-  const command = message.content.split(prefix)[1].split(" ")[0].toLowerCase()
+  if(!message.content.startsWith(process.env.prefix)) return;
+  const command = message.content.split(process.env.prefix)[1].split(" ")[0].toLowerCase()
   if(commands.indexOf(command) === -1) {
     message.reply("Use o comando certo cara...");
     return;    
@@ -38,4 +38,4 @@ client.on('message', async message => {
   
 })
 
-client.login(token);
+client.login(process.env.token);

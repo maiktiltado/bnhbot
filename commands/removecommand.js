@@ -1,9 +1,8 @@
 const fs = require('fs')
 
 module.exports = { 
-    execute: message => {
-        const {prefix} = require("../config.json");
-        const command = message.content.split(prefix)[1].split(" ")[1]
+    execute: message => {        
+        const command = message.content.split(process.env.prefix)[1].split(" ")[1]
         const fileToRemove = require(`../commands/${command}`);
         if(!fileToRemove) {
             message.reply("esse comando n existe :(")
