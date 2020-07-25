@@ -29,7 +29,7 @@ client.on('message', async message => {
   })
   .catch(err => {
     if(err === "NO PERM") {
-      message.reply("sem permissão pra isso camarada")
+      message.reply("sem permissão pra isso camarada.")
       return;
     }
     console.log(err);
