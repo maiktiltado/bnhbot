@@ -17,7 +17,7 @@ module.exports = {
                 message.react("👍")
             })
             .catch(err => {
-                message.reply(err.message)
+                message.reply(err.message);
             })
         
     }
