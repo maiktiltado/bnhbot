@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 require("dotenv").config();
 const client = new Discord.Client()
-const fs = require('fs')
+const fs = require('fs');
 
 const Bot = require('./util.js')
 
